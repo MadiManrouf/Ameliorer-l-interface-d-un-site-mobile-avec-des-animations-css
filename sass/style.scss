@@ -1,0 +1,45 @@
+//variables
+
+$mainbg-light-grey: #f6f6f6;
+$bg-white: #ffffff;
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: $mainbg-light-grey;
+    font-family: "roboto", sans-serif;
+}
+
+.main-container{
+    display: flex;
+    flex-direction: column;
+}
+
+/********** La partie header ***********/
+
+header{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .header_logo{
+        width: 100%;
+        height: 63px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $bg-white;
+    }
+
+    .header_logo_title{
+        font-family: "Shrikhand", serif;
+        font-weight: 400;
+        font-style: normal;
+        font-style: italic;
+    }
+}
