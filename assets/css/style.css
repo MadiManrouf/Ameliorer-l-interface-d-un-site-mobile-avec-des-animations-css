@@ -7,6 +7,7 @@
 body {
   background-color: #f6f6f6;
   font-family: "roboto", sans-serif;
+  color: #000000;
 }
 
 .main-container {
@@ -27,12 +28,114 @@ header .header_logo {
   justify-content: center;
   align-items: center;
   background-color: #ffffff;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1490196078);
 }
-header .header_logo_title {
+header .header_logo .header_logo_title {
   font-family: "Shrikhand", serif;
   font-weight: 400;
   font-style: normal;
   font-style: italic;
+}
+header .header_location {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  gap: 17px;
+  font-weight: 500;
+  background-color: #eaeaea;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2509803922);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+}
+main .reserver {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 25px;
+  padding: 35px 30px 45px;
+}
+main .reserver .reserver_title {
+  font-weight: 700;
+  font-size: 24px;
+}
+main .reserver .reserver_text {
+  font-size: 18px;
+  font-weight: 300;
+}
+main .reserver .reserver_btn {
+  width: 218px;
+  height: 50px;
+  background: linear-gradient(to top, #9356DC, #FF79DA);
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.2509803922);
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 500;
+  color: white;
+  outline: none;
+  border: none;
+}
+main .fonctionnement {
+  padding: 45px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: #ffffff;
+}
+main .fonctionnement .fonctionnement_title {
+  font-weight: 700;
+  font-size: 24px;
+}
+main .fonctionnement .fonctionnement_btn {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+main .fonctionnement .fonctionnement_btn .fonctionnement_btn_list {
+  height: 72px;
+  width: 100%;
+  border-radius: 20px;
+  background-color: #f6f6f6;
+  outline: none;
+  border: none;
+  box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1490196078);
+}
+main .fonctionnement .fonctionnement_btn .fonctionnement_btn_list .chiffre {
+  width: 20px;
+  height: 20px;
+  background-color: #9356DC;
+}
+main .restaurants {
+  padding: 45px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+main .restaurants .restaurants_title {
+  font-weight: 700;
+  font-size: 24px;
+}
+main .restaurants .restaurants_cards {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+main .restaurants .restaurants_cards .restaurants_cards_card {
+  background-color: #ffffff;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+}
+main .restaurants .restaurants_cards .restaurants_cards_card .restaurants_cards_card_img img {
+  object-fit: cover;
+  height: 221px;
+  width: 100%;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
 }
 
 /*# sourceMappingURL=style.css.map */

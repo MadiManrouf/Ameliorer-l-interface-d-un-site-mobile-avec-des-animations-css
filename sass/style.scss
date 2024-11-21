@@ -2,7 +2,37 @@
 
 $mainbg-light-grey: #f6f6f6;
 $bg-white: #ffffff;
+$font-color: #000000;
 
+@mixin logo-shadow{
+    box-shadow: 0px 2px 4px 0px #00000026;
+}
+
+@mixin location-shadow{
+    box-shadow: 0px 4px 4px 0px #00000040;
+}
+
+@mixin section-title{
+    font-weight: 700;
+    font-size: 24px;
+}
+
+@mixin reserver-btn{
+    background: linear-gradient(to top, #9356DC, #FF79DA);
+    box-shadow: 0px 4px 10px 0px #00000040;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 500;
+    color: white;
+}
+
+@mixin section-pdg{
+    padding: 45px 20px;
+}
+
+@mixin btn-shadow{
+    box-shadow: 0px 4px 15px 0px #00000026;
+}
 
 *{
     padding: 0;
@@ -13,6 +43,7 @@ $bg-white: #ffffff;
 body{
     background-color: $mainbg-light-grey;
     font-family: "roboto", sans-serif;
+    color: $font-color;
 }
 
 .main-container{
@@ -34,12 +65,120 @@ header{
         justify-content: center;
         align-items: center;
         background-color: $bg-white;
+        @include logo-shadow;
+
+        .header_logo_title{
+            font-family: "Shrikhand", serif;
+            font-weight: 400;
+            font-style: normal;
+            font-style: italic;
+        }
     }
 
-    .header_logo_title{
-        font-family: "Shrikhand", serif;
-        font-weight: 400;
-        font-style: normal;
-        font-style: italic;
+    .header_location{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50px;
+        gap: 17px;
+        font-weight: 500;
+        background-color: #eaeaea;
+        @include location-shadow;
+    }
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+
+    .reserver{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 25px;
+        padding: 35px 30px 45px;
+        .reserver_title{
+            @include section-title;
+        }
+
+        .reserver_text{
+            font-size: 18px;
+            font-weight: 300;
+        }
+
+        .reserver_btn{
+            width: 218px;
+            height: 50px;
+            @include reserver-btn;
+            outline: none;
+            border: none;
+        }
+    }
+
+    .fonctionnement{
+        @include section-pdg;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        background-color: $bg-white;
+
+        .fonctionnement_title{
+            @include section-title;
+        }
+
+        .fonctionnement_btn{
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            .fonctionnement_btn_list{
+                height: 72px;
+                width: 100%;
+                border-radius: 20px;
+                background-color: $mainbg-light-grey;
+                outline: none;
+                border: none;
+                @include btn-shadow;
+
+                .chiffre{
+                    width: 20px;
+                    height: 20px;
+                    background-color: #9356DC;
+                }
+            }
+        }
+    }
+
+    .restaurants{
+        @include section-pdg;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        .restaurants_title{
+            @include section-title;
+        }
+
+        .restaurants_cards{
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            .restaurants_cards_card{
+                background-color: $bg-white;
+                border-radius: 25px;
+                display: flex;
+                flex-direction: column;
+                .restaurants_cards_card_img{
+
+                    img{
+                        object-fit: cover;
+                        height: 221px;
+                        width: 100%;
+                        border-top-left-radius: 25px;
+                        border-top-right-radius: 25px;
+                    }
+                }
+            }
+        }
     }
 }
