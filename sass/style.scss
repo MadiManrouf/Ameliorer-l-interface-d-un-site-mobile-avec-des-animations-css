@@ -3,6 +3,10 @@
 $mainbg-light-grey: #f6f6f6;
 $bg-white: #ffffff;
 $font-color: #000000;
+$footer-color: #353535;
+$second-font-color: #ffffff;
+$main-icon-color: #7E7E7E;
+$icon-color: #9356DC;
 
 @mixin logo-shadow{
     box-shadow: 0px 2px 4px 0px #00000026;
@@ -32,6 +36,11 @@ $font-color: #000000;
 
 @mixin btn-shadow{
     box-shadow: 0px 4px 15px 0px #00000026;
+}
+
+@mixin btn-style{
+    font-size: 16px;
+    font-weight: 500;
 }
 
 *{
@@ -87,6 +96,8 @@ header{
     }
 }
 
+/*******La partie Main**********/
+
 main{
     display: flex;
     flex-direction: column;
@@ -140,11 +151,36 @@ main{
                 outline: none;
                 border: none;
                 @include btn-shadow;
+                position: relative;
+
+                .fonctionnement_btn_list_txt{
+                    display: flex;
+                    gap: 20px;
+                    padding-left: 30px;
+                    @include btn-style;
+                }
+
+                .fa-solid{
+                    color: $main-icon-color;
+                }
+
+                .fa-color{
+                    color: $icon-color;
+                }
 
                 .chiffre{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    color: $second-font-color;
                     width: 20px;
                     height: 20px;
-                    background-color: #9356DC;
+                    border-radius: 10px;
+                    background-color: $icon-color;
+                    position: absolute;
+                    left: 0;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
                 }
             }
         }
@@ -179,6 +215,35 @@ main{
                     }
                 }
             }
+        }
+    }
+}
+
+/************La partie footer**********/
+
+footer{
+    background-color: $footer-color;
+    @include section-pdg;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .info_img{
+        filter: brightness(0) saturate(100%) invert(100%) sepia(99%) saturate(0%) hue-rotate(84deg) 
+                brightness(106%) contrast(101%);
+        width: 137px;
+        padding-bottom: 10px;
+    }
+    .info_text{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        color: $second-font-color;
+        font-size: 16px;
+        font-weight: 400;
+        .info_text_details{
+            display: flex;
+            gap: 3px;
         }
     }
 }

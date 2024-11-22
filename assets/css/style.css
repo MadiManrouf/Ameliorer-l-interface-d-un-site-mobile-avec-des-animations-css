@@ -47,6 +47,7 @@ header .header_location {
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2509803922);
 }
 
+/*******La partie Main**********/
 main {
   display: flex;
   flex-direction: column;
@@ -103,11 +104,34 @@ main .fonctionnement .fonctionnement_btn .fonctionnement_btn_list {
   outline: none;
   border: none;
   box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.1490196078);
+  position: relative;
+}
+main .fonctionnement .fonctionnement_btn .fonctionnement_btn_list .fonctionnement_btn_list_txt {
+  display: flex;
+  gap: 20px;
+  padding-left: 30px;
+  font-size: 16px;
+  font-weight: 500;
+}
+main .fonctionnement .fonctionnement_btn .fonctionnement_btn_list .fa-solid {
+  color: #7E7E7E;
+}
+main .fonctionnement .fonctionnement_btn .fonctionnement_btn_list .fa-color {
+  color: #9356DC;
 }
 main .fonctionnement .fonctionnement_btn .fonctionnement_btn_list .chiffre {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
   width: 20px;
   height: 20px;
+  border-radius: 10px;
   background-color: #9356DC;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 main .restaurants {
   padding: 45px 20px;
@@ -136,6 +160,32 @@ main .restaurants .restaurants_cards .restaurants_cards_card .restaurants_cards_
   width: 100%;
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
+}
+
+/************La partie footer**********/
+footer {
+  background-color: #353535;
+  padding: 45px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+footer .info_img {
+  filter: brightness(0) saturate(100%) invert(100%) sepia(99%) saturate(0%) hue-rotate(84deg) brightness(106%) contrast(101%);
+  width: 137px;
+  padding-bottom: 10px;
+}
+footer .info_text {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 400;
+}
+footer .info_text .info_text_details {
+  display: flex;
+  gap: 3px;
 }
 
 /*# sourceMappingURL=style.css.map */
