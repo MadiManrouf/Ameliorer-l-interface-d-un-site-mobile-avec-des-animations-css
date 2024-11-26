@@ -187,7 +187,8 @@ main{
     }
 
     .restaurants{
-        @include section-pdg;
+        // @include section-pdg;
+        padding: 40px 10px;
         display: flex;
         flex-direction: column;
         gap: 20px;
@@ -205,14 +206,34 @@ main{
                 display: flex;
                 flex-direction: column;
                 .restaurants_cards_card_img{
-
-                    img{
+                    position: relative;
+                    img{                        
                         object-fit: cover;
-                        height: 221px;
+                        height: 180px;
                         width: 100%;
                         border-top-left-radius: 25px;
                         border-top-right-radius: 25px;
                     }
+
+                    .restaurants_cards_card_img_para{
+                        background-color: #99E2D0;
+                        color: #008766;
+                        font-size: 14px;
+                        font-weight: 500;
+                        width: 80px;
+                        display: flex;
+                        justify-content: center;
+                        padding: 5px;
+                        border-radius: 2px;
+                        position: absolute;
+                        top: 15px;
+                        right: 15px;
+                    }
+                }
+
+                .restaurants_cards_card_info{
+                    display: flex;
+                    justify-content: space-between;
                 }
             }
         }

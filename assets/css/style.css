@@ -134,7 +134,7 @@ main .fonctionnement .fonctionnement_btn .fonctionnement_btn_list .chiffre {
   transform: translate(-50%, -50%);
 }
 main .restaurants {
-  padding: 45px 20px;
+  padding: 40px 10px;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -154,12 +154,33 @@ main .restaurants .restaurants_cards .restaurants_cards_card {
   display: flex;
   flex-direction: column;
 }
+main .restaurants .restaurants_cards .restaurants_cards_card .restaurants_cards_card_img {
+  position: relative;
+}
 main .restaurants .restaurants_cards .restaurants_cards_card .restaurants_cards_card_img img {
   object-fit: cover;
-  height: 221px;
+  height: 180px;
   width: 100%;
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
+}
+main .restaurants .restaurants_cards .restaurants_cards_card .restaurants_cards_card_img .restaurants_cards_card_img_para {
+  background-color: #99E2D0;
+  color: #008766;
+  font-size: 14px;
+  font-weight: 500;
+  width: 80px;
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+  border-radius: 2px;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+main .restaurants .restaurants_cards .restaurants_cards_card .restaurants_cards_card_info {
+  display: flex;
+  justify-content: space-between;
 }
 
 /************La partie footer**********/
