@@ -192,6 +192,7 @@ main{
         display: flex;
         flex-direction: column;
         gap: 20px;
+        
         .restaurants_title{
             @include section-title;
         }
@@ -200,13 +201,16 @@ main{
             display: flex;
             flex-direction: column;
             gap: 20px;
+
             .restaurants_cards_card{
                 background-color: $bg-white;
                 border-radius: 25px;
                 display: flex;
                 flex-direction: column;
+
                 .restaurants_cards_card_img{
                     position: relative;
+
                     img{                        
                         object-fit: cover;
                         height: 180px;
@@ -234,6 +238,29 @@ main{
                 .restaurants_cards_card_info{
                     display: flex;
                     justify-content: space-between;
+                    padding: 15px 15px;
+                    align-items: center;
+
+                    .restaurants_cards_card_info_txt{
+
+                        .restaurants_cards_card_info_txt_header{
+                            padding-bottom: 5px;
+                        }
+                    }
+                }
+
+                .restaurants_cards_card_info_icon{
+                    position: relative;
+                    padding-right: 15px;
+
+                    .restaurants_cards_card_info_icon_one{
+                        position: absolute;
+                        display: none;
+                    }
+                }
+
+                .restaurants_cards_card_info_icon:hover .restaurants_cards_card_info_icon_one{
+                    display: block;                    
                 }
             }
         }
@@ -265,6 +292,14 @@ footer{
         .info_text_details{
             display: flex;
             gap: 3px;
+
+            .info_text_details_icon{
+                width: 19px;
+
+                .fa-solid{
+                    font-size: 11px;
+                }
+            }
         }
     }
 }
