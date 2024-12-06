@@ -1,3 +1,13 @@
+@keyframes animate {
+  0% {
+    transform: scale(0);
+    transform: translate(-100%);
+  }
+  100% {
+    transform: scale(1);
+    transform: translate(0);
+  }
+}
 * {
   padding: 0;
   margin: 0;
@@ -40,6 +50,7 @@ header .header_logo .header_logo_prev {
 }
 header .header_logo .header_logo_prev .fa-solid {
   color: #353535;
+  cursor: pointer;
 }
 header .header_logo .header_logo_title_main {
   font-family: "Shrikhand", serif;
@@ -52,9 +63,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #f6f6f6;
-  padding-bottom: 40px;
-  position: relative;
+  background-color: #ffffff;
 }
 main .image {
   width: 100%;
@@ -62,14 +71,15 @@ main .image {
   object-fit: cover;
 }
 main .menu {
-  padding: 0 10px;
+  padding: 0 10px 30px;
   border-top-left-radius: 40px;
   border-top-right-radius: 40px;
-  background-color: #ffffff;
-  position: absolute;
-  top: 220px;
-  left: 0;
+  background-color: #f6f6f6;
+  margin-top: -55px;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 main .menu .menu_header {
   display: flex;
@@ -88,39 +98,41 @@ main .menu .menu_header .menu_header_icon {
 }
 main .menu .menu_header .menu_header_icon .menu_header_icon_one {
   position: absolute;
-  display: none;
+  opacity: 0;
 }
 main .menu .menu_header .menu_header_icon:hover .menu_header_icon_one {
-  display: block;
+  opacity: 1;
+  cursor: pointer;
+  transition: 0.3s;
 }
-main .entrer {
+main .menu .entrer {
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding: 0 10px;
-  padding-bottom: 50px;
+  padding: 0 10px 30px;
+  padding-bottom: 30px;
 }
-main .entrer .entrer_title {
+main .menu .entrer .entrer_title {
   width: 100%;
   display: flex;
   flex-direction: column;
   gap: 3px;
   margin-bottom: 15px;
 }
-main .entrer .entrer_title .entrer_title_para {
+main .menu .entrer .entrer_title .entrer_title_para {
   font-size: 16px;
   font-weight: 300;
 }
-main .entrer .entrer_title .entrer_title_border {
+main .menu .entrer .entrer_title .entrer_title_border {
   border: 3px solid #99E2D0;
   width: 40px;
 }
-main .entrer .cards {
+main .menu .entrer .cards {
   display: flex;
   flex-direction: column;
   width: 100%;
 }
-main .entrer .cards .cards_card {
+main .menu .entrer .cards .cards_card {
   background-color: white;
   cursor: pointer;
   width: 100%;
@@ -131,7 +143,7 @@ main .entrer .cards .cards_card {
   box-shadow: 1px 1px 10px #c3c0c0;
   margin-bottom: 15px;
 }
-main .entrer .cards .cards_card .cards_card_txt {
+main .menu .entrer .cards .cards_card .cards_card_txt {
   height: 85px;
   display: flex;
   flex-wrap: wrap;
@@ -139,7 +151,7 @@ main .entrer .cards .cards_card .cards_card_txt {
   border-radius: 15px 0 0 15px;
   transition: 1s;
 }
-main .entrer .cards .cards_card .cards_card_txt h3 {
+main .menu .entrer .cards .cards_card .cards_card_txt h3 {
   width: 100%;
   margin: 15px 0 0 10px;
   font-size: 18px;
@@ -147,7 +159,7 @@ main .entrer .cards .cards_card .cards_card_txt h3 {
   white-space: nowrap;
   text-overflow: ellipsis;
 }
-main .entrer .cards .cards_card .cards_card_txt p {
+main .menu .entrer .cards .cards_card .cards_card_txt p {
   margin: -12px 0 0 10px;
   font-size: 16px;
   width: 100%;
@@ -156,7 +168,7 @@ main .entrer .cards .cards_card .cards_card_txt p {
   white-space: nowrap;
   text-overflow: ellipsis;
 }
-main .entrer .cards .cards_card .cards_card_price {
+main .menu .entrer .cards .cards_card .cards_card_price {
   width: 40px;
   padding-top: 28px;
   padding-right: 5px;
@@ -164,7 +176,7 @@ main .entrer .cards .cards_card .cards_card_price {
   font-size: 15px;
   transition: 1s;
 }
-main .entrer .cards .cards_card .cards_card_check {
+main .menu .entrer .cards .cards_card .cards_card_check {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -175,10 +187,40 @@ main .entrer .cards .cards_card .cards_card_check {
   width: 0;
   transition: 1s;
 }
-main .entrer .cards .cards_card:hover .cards_card_txt {
+main .menu .entrer .cards .cards_one {
+  animation: animate 0.5s forwards;
+}
+main .menu .entrer .cards .cards_two {
+  animation: animate 1s forwards;
+}
+main .menu .entrer .cards .cards_three {
+  animation: animate 1.5s forwards;
+}
+main .menu .entrer .cards .cards_four {
+  animation: animate 2s forwards;
+}
+main .menu .entrer .cards .cards_five {
+  animation: animate 2.5s forwards;
+}
+main .menu .entrer .cards .cards_six {
+  animation: animate 3s forwards;
+}
+main .menu .entrer .cards .cards_seven {
+  animation: animate 3.5s forwards;
+}
+main .menu .entrer .cards .cards_eight {
+  animation: animate 4s forwards;
+}
+main .menu .entrer .cards .cards_nine {
+  animation: animate 4.5s forwards;
+}
+main .menu .entrer .cards .cards_ten {
+  animation: animate 5s forwards;
+}
+main .menu .entrer .cards .cards_card:hover .cards_card_txt {
   width: calc(100% - 40px - 70px);
 }
-main .entrer .cards .cards_card:hover .cards_card_check {
+main .menu .entrer .cards .cards_card:hover .cards_card_check {
   width: 70px;
 }
 main .reserver_btn {
@@ -192,22 +234,26 @@ main .reserver_btn {
   font-size: 16px;
   font-weight: 500;
   color: white;
+  cursor: pointer;
+}
+main .reserver_btn:hover {
+  opacity: 0.8;
 }
 
 /***************La partie du footer***********/
-footer {
+.info {
   background-color: #353535;
   padding: 45px 20px;
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
-footer .info_img {
+.info .info_img {
   filter: brightness(0) saturate(100%) invert(100%) sepia(99%) saturate(0%) hue-rotate(84deg) brightness(106%) contrast(101%);
   width: 137px;
   padding-bottom: 10px;
 }
-footer .info_text {
+.info .info_text {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -215,15 +261,46 @@ footer .info_text {
   font-size: 16px;
   font-weight: 400;
 }
-footer .info_text .info_text_details {
+.info .info_text a {
+  text-decoration: none;
+  color: #ffffff;
+}
+.info .info_text .info_text_details {
   display: flex;
   gap: 3px;
 }
-footer .info_text .info_text_details .info_text_details_icon {
+.info .info_text .info_text_details .info_text_details_icon {
   width: 19px;
 }
-footer .info_text .info_text_details .info_text_details_icon .fa-solid {
+.info .info_text .info_text_details .info_text_details_icon .fa-solid {
   font-size: 11px;
+}
+
+/**************Responsive************/
+@media (min-width: 1024px) {
+  .menu {
+    max-width: 1055px;
+  }
+  .entrer {
+    max-width: 634px;
+  }
+  .info {
+    flex-direction: row-reverse;
+    padding-right: 40px;
+  }
+  .info .info_text {
+    flex-direction: row;
+    margin-right: 50px;
+    gap: 50px;
+  }
+  .info_texts {
+    display: flex;
+    gap: 10px;
+  }
+  .info_details {
+    display: flex;
+    gap: 10px;
+  }
 }
 
 /*# sourceMappingURL=pages.css.map */

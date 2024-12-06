@@ -43,6 +43,20 @@ $icon-color: #9356DC;
     font-weight: 500;
 }
 
+@keyframes loader{
+    0%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(0);
+    }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
 *{
     padding: 0;
     margin: 0;
@@ -58,6 +72,30 @@ body{
 .main-container{
     display: flex;
     flex-direction: column;
+}
+
+/**********Le loader**********/
+
+.loader{
+    justify-content: center;
+    align-items: center;
+    background-color: #f6f6f6;
+    height: 100vh;
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    animation: loader 1s 3s forwards;
+    display: flex;
+    
+    .loader_circle{
+        
+        border: 16px solid #f3f3f3; 
+        border-top: 16px solid $icon-color;
+        border-radius: 50%;
+        width: 120px;
+        height: 120px;
+        animation: spin 2s linear infinite;
+    }
 }
 
 /********** La partie header ***********/
@@ -124,6 +162,11 @@ main{
             @include reserver-btn;
             outline: none;
             border: none;
+            cursor: pointer;            
+        }
+
+        .reserver_btn:hover{
+            opacity: 0.8;
         }
     }
 
@@ -202,6 +245,11 @@ main{
             flex-direction: column;
             gap: 20px;
 
+            a{
+                text-decoration: none;
+                color: $font-color;
+            }
+
             .restaurants_cards_card{
                 background-color: $bg-white;
                 border-radius: 25px;
@@ -255,12 +303,13 @@ main{
 
                     .restaurants_cards_card_info_icon_one{
                         position: absolute;
-                        display: none;
+                        opacity: 0;
                     }
                 }
 
                 .restaurants_cards_card_info_icon:hover .restaurants_cards_card_info_icon_one{
-                    display: block;                    
+                    opacity: 1; 
+                    transition: 0.3s;                   
                 }
             }
         }
@@ -289,6 +338,12 @@ footer{
         color: $second-font-color;
         font-size: 16px;
         font-weight: 400;
+
+        a{
+            text-decoration: none;
+            color: $bg-white;
+        }
+
         .info_text_details{
             display: flex;
             gap: 3px;
@@ -301,5 +356,44 @@ footer{
                 }
             }
         }
+    }
+}
+
+/*****************Responsive***************/
+
+@media(min-width: 1024px){
+    
+    main .fonctionnement .fonctionnement_btn{
+        flex-direction: row;
+        // width: 100%;
+        // margin: 0 auto;
+    }
+
+    main .fonctionnement .fonctionnement_btn .fonctionnement_btn_list{
+        max-width: 335px;
+    }
+
+    main .restaurants .restaurants_cards{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+    
+    .info{        
+        flex-direction: row-reverse;
+        padding-right: 40px;
+    }
+    .info .info_text{
+        flex-direction: row;
+        margin-right: 50px;
+        gap: 50px;
+    }
+    .info_texts{
+        display: flex;
+        gap: 10px;
+    }
+    .info_details{
+        display: flex;
+        gap: 10px;
     }
 }

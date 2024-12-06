@@ -14,7 +14,7 @@ $check-width: 70px;
 }
 
 @mixin section-pdg{
-    padding: 0 10px;
+    padding: 0 10px 30px;
 }
 
 @mixin section-title{
@@ -28,11 +28,22 @@ $check-width: 70px;
 }
 
 @mixin section-cards-pdg{
-    padding-bottom: 50px;
+    padding-bottom: 30px;
 }
 
 @mixin cards-mgn{
     margin-bottom: 15px;
+}
+
+@keyframes animate {
+    0%{
+        transform: scale(0);
+        transform: translate(-100%);
+    }
+    100%{
+        transform: scale(1);
+        transform: translate(0);
+    }
 }
 
 *{
@@ -78,6 +89,7 @@ header{
 
             .fa-solid{
                 color: $footer-color;
+                cursor: pointer;
             }
         }
 
@@ -94,9 +106,7 @@ main{
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: $mainbg-light-grey;
-    padding-bottom: 40px;
-    position: relative;
+    background-color: $bg-white;
 
     .image{
         width: 100%;
@@ -108,13 +118,12 @@ main{
         @include section-pdg;
         border-top-left-radius: 40px;
         border-top-right-radius: 40px;
-        background-color: $bg-white;
-        position: absolute;
-        top: 220px;
-        left: 0;
+        background-color: $mainbg-light-grey;
+        margin-top: -55px;
         width: 100%;
         display: flex;
         flex-direction: column;
+        align-items: center;
 
         .menu_header{
             display: flex;
@@ -134,118 +143,166 @@ main{
 
                 .menu_header_icon_one{
                     position: absolute;
-                    display: none;
+                    opacity: 0;
                 }
             }
 
             .menu_header_icon:hover .menu_header_icon_one{
-                display: block;
+                opacity: 1;
+                cursor: pointer;
+                transition: 0.3s;
             }
         }
-                
-    }
 
-    .entrer{
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        @include section-pdg;
-        @include section-cards-pdg;
-        .entrer_title{
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            gap: 3px;  
-            @include cards-mgn;
-
-                .entrer_title_para{
-                    @include section-title;
-                }
-
-                .entrer_title_border{
-                    @include title-border;
-                }
-        }
-
-        .cards{
+        .entrer{
             display: flex;
             flex-direction: column;
             width: 100%;
-
-            .cards_card{
-                background-color: white;
-                cursor: pointer;
+            @include section-pdg;
+            @include section-cards-pdg;
+            .entrer_title{
                 width: 100%;
                 display: flex;
-                align-items: center;
-                border-radius: 15px;
-                overflow: hidden;
-                box-shadow: 1px 1px 10px #c3c0c0;
+                flex-direction: column;
+                gap: 3px;  
                 @include cards-mgn;
-
-                .cards_card_txt{
-                    height: 85px;
-                    display: flex;
-                    flex-wrap: wrap;
-                    width: calc(100% - $price-width);
-                    border-radius: 15px 0 0 15px;
-                    transition: 1s;
     
-                    h3 {
-                        width: 100%;
-                        margin: 15px 0 0 10px;
-                        font-size: 18px;
-                        overflow: hidden;
-                        white-space: nowrap;
-                        text-overflow: ellipsis;
+                    .entrer_title_para{
+                        @include section-title;
                     }
     
-                    p {
-                        margin: -12px 0 0 10px;
-                        font-size: 16px;
-                        width: 100%;
-                        font-weight: lighter;
-                        overflow: hidden;
-                        white-space: nowrap;
-                        text-overflow: ellipsis;
+                    .entrer_title_border{
+                        @include title-border;
                     }
-                }
-    
-                .cards_card_price{
-                    width: $price-width;
-                    padding-top: 28px;
-                    padding-right: 5px;
-                    font-weight: bold;
-                    font-size: 15px;
-                    transition: 1s;
-                }
-    
-                .cards_card_check{
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    color: white;
-                    background-color: $light-green-clr;
-                    font-size: 25px;
-                    height: 85px;
-                    width: 0;
-                    transition: 1s;
-                }
-                
             }
     
-            .cards_card:hover{
+            .cards{
+                display: flex;
+                flex-direction: column;
+                width: 100%;
     
-                .cards_card_txt {
-                    width: calc(100% - $price-width - $check-width);
+                .cards_card{
+                    background-color: white;
+                    cursor: pointer;
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    border-radius: 15px;
+                    overflow: hidden;
+                    box-shadow: 1px 1px 10px #c3c0c0;
+                    @include cards-mgn;
+
+                
+
+    
+                    .cards_card_txt{
+                        height: 85px;
+                        display: flex;
+                        flex-wrap: wrap;
+                        width: calc(100% - $price-width);
+                        border-radius: 15px 0 0 15px;
+                        transition: 1s;
+        
+                        h3 {
+                            width: 100%;
+                            margin: 15px 0 0 10px;
+                            font-size: 18px;
+                            overflow: hidden;
+                            white-space: nowrap;
+                            text-overflow: ellipsis;
+                        }
+        
+                        p {
+                            margin: -12px 0 0 10px;
+                            font-size: 16px;
+                            width: 100%;
+                            font-weight: lighter;
+                            overflow: hidden;
+                            white-space: nowrap;
+                            text-overflow: ellipsis;
+                        }
+                    }
+        
+                    .cards_card_price{
+                        width: $price-width;
+                        padding-top: 28px;
+                        padding-right: 5px;
+                        font-weight: bold;
+                        font-size: 15px;
+                        transition: 1s;
+                    }
+        
+                    .cards_card_check{
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        color: white;
+                        background-color: $light-green-clr;
+                        font-size: 25px;
+                        height: 85px;
+                        width: 0;
+                        transition: 1s;
+                    }
+                    
                 }
-    
-                .cards_card_check {
-                    width: $check-width;
+
+                .cards_one{
+
+                    animation: animate 0.5s forwards;
+                }
+
+                .cards_two{
+                    animation: animate 1s forwards;
+                }
+
+                .cards_three{
+                    animation: animate 1.5s forwards;
+                }
+
+                .cards_four{
+                    animation: animate 2s forwards;
+                }
+
+                .cards_five{
+                    animation: animate 2.5s forwards;
+                }
+
+                .cards_six{
+                    animation: animate 3s forwards;
+                }
+
+                .cards_seven{
+                    animation: animate 3.5s forwards;
+                }
+
+                .cards_eight{
+                    animation: animate 4s forwards;
+                }
+
+                .cards_nine{
+                    animation: animate 4.5s forwards;
+                }
+
+                .cards_ten{
+                    animation: animate 5s forwards;
+                }
+        
+                .cards_card:hover{
+        
+                    .cards_card_txt {
+                        width: calc(100% - $price-width - $check-width);
+                    }
+        
+                    .cards_card_check {
+                        width: $check-width;
+                    }
                 }
             }
         }
+                
     }
+
+    
 
     .reserver_btn{
         width: 186px;
@@ -258,6 +315,11 @@ main{
         font-size: 16px;
         font-weight: 500;
         color: white;
+        cursor: pointer;
+    }
+
+    .reserver_btn:hover{
+        opacity: 0.8;
     }
 }
 
@@ -269,9 +331,7 @@ main{
     display: flex;
     flex-direction: column;
     gap: 20px;
-    position: absolute;
-    bottom: 0;
-    
+
     .info_img{
         filter: brightness(0) saturate(100%) invert(100%) sepia(99%) saturate(0%) hue-rotate(84deg) 
                 brightness(106%) contrast(101%);
@@ -285,6 +345,11 @@ main{
         color: $second-font-color;
         font-size: 16px;
         font-weight: 400;
+        a{
+            text-decoration: none;
+            color: $bg-white;
+        }
+        
         .info_text_details{
             display: flex;
             gap: 3px;
@@ -297,5 +362,33 @@ main{
                 }
             }
         }
+    }
+}
+
+/**************Responsive************/
+
+@media(min-width: 1024px){
+    .menu{
+        max-width: 1055px;
+    }
+    .entrer{
+        max-width: 634px;
+    }
+    .info{        
+        flex-direction: row-reverse;
+        padding-right: 40px;
+    }
+    .info .info_text{
+        flex-direction: row;
+        margin-right: 50px;
+        gap: 50px;
+    }
+    .info_texts{
+        display: flex;
+        gap: 10px;
+    }
+    .info_details{
+        display: flex;
+        gap: 10px;
     }
 }
