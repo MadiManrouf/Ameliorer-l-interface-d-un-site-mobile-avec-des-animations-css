@@ -99,6 +99,7 @@ main .menu .menu_header .menu_header_icon {
 main .menu .menu_header .menu_header_icon .menu_header_icon_one {
   position: absolute;
   opacity: 0;
+  transition: 0.3s;
 }
 main .menu .menu_header .menu_header_icon:hover .menu_header_icon_one {
   opacity: 1;

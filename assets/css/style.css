@@ -127,10 +127,17 @@ main .fonctionnement {
   flex-direction: column;
   gap: 20px;
   background-color: #ffffff;
+  width: 100%;
+}
+main .fonctionnement .fonctionnement_container {
+  max-width: 1058px;
+  width: 100%;
+  margin: 0 auto;
 }
 main .fonctionnement .fonctionnement_title {
   font-weight: 700;
   font-size: 24px;
+  margin-bottom: 30px;
 }
 main .fonctionnement .fonctionnement_btn {
   display: flex;
@@ -180,14 +187,20 @@ main .restaurants {
   flex-direction: column;
   gap: 20px;
 }
+main .restaurants .restaurants_container {
+  width: 100%;
+  max-width: 1058px;
+  margin: 0 auto;
+}
 main .restaurants .restaurants_title {
   font-weight: 700;
   font-size: 24px;
+  margin-bottom: 30px;
 }
 main .restaurants .restaurants_cards {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 80px;
 }
 main .restaurants .restaurants_cards a {
   text-decoration: none;
@@ -239,6 +252,7 @@ main .restaurants .restaurants_cards .restaurants_cards_card .restaurants_cards_
 main .restaurants .restaurants_cards .restaurants_cards_card .restaurants_cards_card_info_icon .restaurants_cards_card_info_icon_one {
   position: absolute;
   opacity: 0;
+  transition: 0.3s;
 }
 main .restaurants .restaurants_cards .restaurants_cards_card .restaurants_cards_card_info_icon:hover .restaurants_cards_card_info_icon_one {
   opacity: 1;
@@ -261,7 +275,6 @@ footer .info_img {
 footer .info_text {
   display: flex;
   flex-direction: column;
-  gap: 10px;
   color: #ffffff;
   font-size: 16px;
   font-weight: 400;
@@ -283,6 +296,9 @@ footer .info_text .info_text_details .info_text_details_icon .fa-solid {
 
 /*****************Responsive***************/
 @media (min-width: 1024px) {
+  .fonctionnement {
+    margin: 0 auto;
+  }
   main .fonctionnement .fonctionnement_btn {
     flex-direction: row;
   }
