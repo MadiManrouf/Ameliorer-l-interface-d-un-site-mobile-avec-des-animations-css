@@ -1,34 +1,12 @@
 $mainbg-light-grey: #f6f6f6;
 $bg-white: #ffffff;
-$font-color: #000000;
 $footer-color: #353535;
-$second-font-color: #ffffff;
-$main-icon-color: #7E7E7E;
-$icon-color: #9356DC;
 $light-green-clr: #99E2D0;
 $price-width: 40px;
 $check-width: 70px;
 
-@mixin footer-pdg{
-    padding: 45px 20px;
-}
-
 @mixin section-pdg{
     padding: 0 10px 30px;
-}
-
-@mixin section-title{
-    font-size: 16px;
-    font-weight: 300;
-}
-
-@mixin title-border{
-    border: 3px solid $light-green-clr;
-    width: 40px;
-}
-
-@mixin section-cards-pdg{
-    padding-bottom: 30px;
 }
 
 @mixin cards-mgn{
@@ -55,7 +33,7 @@ $check-width: 70px;
 body{
     background-color: $mainbg-light-grey;
     font-family: "roboto", sans-serif;
-    color: $font-color;
+    color: #000000;
 }
 
 .main-container{
@@ -160,7 +138,7 @@ main{
             flex-direction: column;
             width: 100%;
             @include section-pdg;
-            @include section-cards-pdg;
+            padding-bottom: 30px;
             .entrer_title{
                 width: 100%;
                 display: flex;
@@ -169,11 +147,13 @@ main{
                 @include cards-mgn;
     
                     .entrer_title_para{
-                        @include section-title;
+                        font-size: 16px;
+                        font-weight: 300;
                     }
     
                     .entrer_title_border{
-                        @include title-border;
+                        border: 3px solid $light-green-clr;
+                        width: 40px;
                     }
             }
     
@@ -328,7 +308,7 @@ main{
 
 .info{
     background-color: $footer-color;
-    @include footer-pdg;
+    padding: 45px 20px;;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -343,7 +323,7 @@ main{
         display: flex;
         flex-direction: column;
         gap: 10px;
-        color: $second-font-color;
+        color: #ffffff;
         font-size: 16px;
         font-weight: 400;
         a{

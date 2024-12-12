@@ -3,44 +3,16 @@
 $mainbg-light-grey: #f6f6f6;
 $bg-white: #ffffff;
 $font-color: #000000;
-$footer-color: #353535;
 $second-font-color: #ffffff;
-$main-icon-color: #7E7E7E;
 $icon-color: #9356DC;
-
-@mixin logo-shadow{
-    box-shadow: 0px 2px 4px 0px #00000026;
-}
-
-@mixin location-shadow{
-    box-shadow: 0px 4px 4px 0px #00000040;
-}
 
 @mixin section-title{
     font-weight: 700;
     font-size: 24px;
 }
 
-@mixin reserver-btn{
-    background: linear-gradient(to top, #9356DC, #FF79DA);
-    box-shadow: 0px 4px 10px 0px #00000040;
-    border-radius: 50px;
-    font-size: 16px;
-    font-weight: 500;
-    color: white;
-}
-
 @mixin section-pdg{
     padding: 45px 20px;
-}
-
-@mixin btn-shadow{
-    box-shadow: 0px 4px 15px 0px #00000026;
-}
-
-@mixin btn-style{
-    font-size: 16px;
-    font-weight: 500;
 }
 
 @keyframes loader{
@@ -112,7 +84,6 @@ header{
         justify-content: center;
         align-items: center;
         background-color: $bg-white;
-        @include logo-shadow;
 
         .header_logo_title{
             font-family: "Shrikhand", serif;
@@ -130,7 +101,8 @@ header{
         gap: 17px;
         font-weight: 500;
         background-color: #eaeaea;
-        @include location-shadow;
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2509803922), 
+                    inset 0px 2px 4px 0px rgba(0, 0, 0, 0.1490196078);
     }
 }
 
@@ -159,10 +131,22 @@ main{
         .reserver_btn{
             width: 218px;
             height: 50px;
-            @include reserver-btn;
+            background: linear-gradient(to top, #9356DC, #FF79DA);
+            box-shadow: 0px 4px 10px 0px #00000040;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 500;
+            color: white;
             outline: none;
             border: none;
             cursor: pointer;            
+        }
+
+        a{
+            display: flex;
+            text-decoration: none;
+            align-items: center;
+            justify-content: center;
         }
 
         .reserver_btn:hover{
@@ -195,24 +179,27 @@ main{
             gap: 20px;
 
             .fonctionnement_btn_list{
+                display: flex;
+                align-items: center;
                 height: 72px;
                 width: 100%;
                 border-radius: 20px;
                 background-color: $mainbg-light-grey;
                 outline: none;
                 border: none;
-                @include btn-shadow;
+                box-shadow: 0px 4px 15px 0px #00000026;
                 position: relative;
 
                 .fonctionnement_btn_list_txt{
                     display: flex;
                     gap: 20px;
                     padding-left: 30px;
-                    @include btn-style;
+                    font-size: 16px;
+                    font-weight: 500;
                 }
 
                 .fa-solid{
-                    color: $main-icon-color;
+                    color: #7E7E7E;
                 }
 
                 .fa-color{
@@ -238,7 +225,6 @@ main{
     }
 
     .restaurants{
-        // @include section-pdg;
         padding: 40px 10px;
         display: flex;
         flex-direction: column;
@@ -335,7 +321,7 @@ main{
 /************La partie footer**********/
 
 footer{
-    background-color: $footer-color;
+    background-color: #353535;
     @include section-pdg;
     display: flex;
     flex-direction: column;

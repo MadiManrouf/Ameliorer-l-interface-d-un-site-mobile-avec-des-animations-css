@@ -65,7 +65,6 @@ header .header_logo {
   justify-content: center;
   align-items: center;
   background-color: #ffffff;
-  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1490196078);
 }
 header .header_logo .header_logo_title {
   font-family: "Shrikhand", serif;
@@ -81,7 +80,7 @@ header .header_location {
   gap: 17px;
   font-weight: 500;
   background-color: #eaeaea;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2509803922);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2509803922), inset 0px 2px 4px 0px rgba(0, 0, 0, 0.1490196078);
 }
 
 /*******La partie Main**********/
@@ -118,6 +117,12 @@ main .reserver .reserver_btn {
   border: none;
   cursor: pointer;
 }
+main .reserver a {
+  display: flex;
+  text-decoration: none;
+  align-items: center;
+  justify-content: center;
+}
 main .reserver .reserver_btn:hover {
   opacity: 0.8;
 }
@@ -145,6 +150,8 @@ main .fonctionnement .fonctionnement_btn {
   gap: 20px;
 }
 main .fonctionnement .fonctionnement_btn .fonctionnement_btn_list {
+  display: flex;
+  align-items: center;
   height: 72px;
   width: 100%;
   border-radius: 20px;
